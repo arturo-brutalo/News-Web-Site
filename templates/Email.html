@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email</title>
+    <style>
+        body {
+            background-image: linear-gradient(to bottom left, red, orange, yellow);
+        }
+    </style>
+</head>
+<body>
+    <h2 class="main-title">Would you mind enter your Name and Emai Adress</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}<br>
+        <div>
+            <input type="submit" value="Send"> <a href="{% url 'News' %}" class="back-button">Back</a>
+        </div>
+    </form>
+</body>
+</html>
+    </form>
+</body>
+</html>
