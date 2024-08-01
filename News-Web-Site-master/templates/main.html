@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <style>
+        body {
+          background-image: linear-gradient(to bottom left, rgb(0, 255, 110), rgb(4, 0, 255), rgb(144, 0, 255));
+        }
+        h2 {
+          font-family: verdana;
+        }
+        h1 {
+          font-family: verdana;
+        }        
+    </style>
+</head>
+<body>
+        <h1>News</h1><br>
+            {% for new in news %}
+                    <h2>{{ new.header }}</h2>
+                    <p><b>Description:</b> {{ new.description }}</p>
+                    <p><b>Image:</b> <img src= {{ new.image }} alt={{ new.alt_text }}/></p>
+                    <p><b>Publish Date:</b> {{ new.publish_date }}</p>
+                    <hr>
+                    {% endfor %}
+</body>
+</html>

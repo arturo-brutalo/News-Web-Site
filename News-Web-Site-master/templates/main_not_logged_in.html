@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <style>
+        body {
+            background-image: linear-gradient(to bottom left, rgb(0, 255, 110), rgb(4, 0, 255), rgb(144, 0, 255));
+        }
+        
+        h3 {
+          font-family: verdana;
+        }
+        .in_button{
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+        h2 {
+          font-family: verdana;
+        }
+    </style>
+</head>
+<body>
+        <a href="create_contact" class="in_button">Sign In </a><br>
+        <a href="log_in" class="in_button">Log In</a>
+    {% if news %}
+        <h2>Short News Info</h2><br>
+        <h2>Here You Can't View Any Description</h2>
+        <ul>
+            {% for new in news %}
+                <li>
+                    <h3>{{ new.header }}</h3>
+                    <p><b>Image:</b> <img src= {{ new.image }} alt={{ new.alt_text }}/></p>
+                    <p><b>Publish Date:</b> {{ new.publish_date }}</p>
+                    <hr>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
